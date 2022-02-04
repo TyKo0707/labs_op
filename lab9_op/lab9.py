@@ -30,15 +30,15 @@
 
 def lab9(cum):
     l = cum.split()
-    max = 0
+    max_n = 0
     for k in range(len(l)):
         loc_max = 1
         for i in range(len(l)):
             if i != len(l) - 1 and l[k][0] == l[i + 1][0] and l[k][-1] == l[i + 1][-1]:
                 loc_max += 1
 
-        if loc_max > max:
-            max = loc_max
+        if loc_max > max_n:
+            max_n = loc_max
 
     return max
 
