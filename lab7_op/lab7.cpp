@@ -4,14 +4,17 @@
 #include <ctime>
 using namespace std;
 
-const int n = 10;
-int arr[n];
-void input_arr(int*);
+void input_arr(int*, int n);
 void output_arr(int*);
 int aver(int[]);
 
-int main() {	
-	input_arr(arr);
+int main() {
+	int n;
+	cout << "Input array size: ";
+	cin >> n;
+
+	int* arr = new int[n];	
+	input_arr(arr, n);
 	cout << "C(n): "; output_arr(arr);
 	printf("Average of negatives is: %2d\n", aver(arr));
 	cout << "F(n): ";
@@ -19,10 +22,11 @@ int main() {
 		cout << arr[x] * aver(arr) << " ";
 	}
 	cout << "\n";
+	delete(arr);
 	system("pause");
 }
 
-void input_arr(int* p) {
+void input_arr(int* p, int n) {
 	srand(time(NULL));
 	for (int i = 0; i < n; i++) {
 		*p = rand() % 20 - 10;

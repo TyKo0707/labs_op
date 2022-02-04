@@ -1,20 +1,32 @@
-a = float(input("Введите значение а: "))
-while a < 0:
-    a = float(input("Введите значение а правильно: "))
+while True:
 
-x = float(input("Введите значение x: "))
-while x < 0:
-    a = float(input("Введите значение x правильно: "))
+    a = float(input("Введите значение а: "))
 
-n = int(input("Введите значение n: "))
+    x = float(input("Введите значение x: "))
 
-prev = 0.5 * (a + (x / a))
+    n = int(input("Введите значение n: "))
 
-for i in range(1, n + 1):
-    if i == 1:
-        function = prev
+    if a < 0 or x < 0 or n < 0:
+
+        print('Введено некорректное значение!')
+
     else:
-        function = 0.5 * (prev + (x / prev))
-        prev = function
-    if i == n:
+
+        prev = 0.5 * (a + (x / a))
+
+        function = 0
+
+        for i in range(1, n + 1):
+            if i == 1:
+                function = prev
+            else:
+                function = 0.5 * (prev + (x / prev))
+                prev = function
+
         print(function)
+
+
+
+
+
+
